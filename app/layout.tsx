@@ -1,15 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Press_Start_2P, VT323, Orbitron } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const pressStart2P = Press_Start_2P({
+  weight: "400",
   subsets: ["latin"],
+  variable: "--font-main",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const vt323 = VT323({
+  weight: "400",
   subsets: ["latin"],
+  variable: "--font-vt323",
+});
+
+const orbitron = Orbitron({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-orbitron",
 });
 
 export const metadata: Metadata = {
@@ -23,11 +31,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className="h-full antialiased">
+      <body
+        className={`${pressStart2P.variable} ${vt323.variable} ${orbitron.variable} flex min-h-full flex-col`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
