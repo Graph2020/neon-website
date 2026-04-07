@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Press_Start_2P, VT323, Orbitron } from "next/font/google";
 import "./globals.css";
+import NavBar from "./sections/NavBar";
 
 const pressStart2P = Press_Start_2P({
   weight: "400",
@@ -35,6 +36,7 @@ export default function RootLayout({
       <body
         className={`${pressStart2P.variable} ${vt323.variable} ${orbitron.variable} flex min-h-full flex-col`}
       >
+        <NavBar />
         {children}
       </body>
     </html>

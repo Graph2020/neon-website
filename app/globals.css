@@ -9,11 +9,30 @@
   --font-heavytext: var(--font-orbitron), sans-serif;
 }
 
+@utility center-element {
+  @apply flex items-center justify-center;
+}
+
+@utility butger-line {
+  @apply bg-secondary block h-0.5 w-7;
+}
+
+@utility nav-link {
+  @apply cursor-pointer text-sm text-white;
+  @apply transition-colors duration-300 ease-in-out;
+  @apply hover:text-main;
+}
+
 @layer components {
   .filter-btn {
     @apply w-fit cursor-pointer border border-white px-2.5 tracking-wider text-white uppercase;
     @apply transition-colors duration-300 ease-in-out;
     @apply hover:bg-white hover:text-black;
+  }
+  .icon-container {
+    @apply bg-main center-element relative h-12 w-10 text-3xl text-white;
+    @apply after:bg-main after:absolute after:inset-0 after:h-full after:w-full after:content-[''];
+    @apply after:-z-20 after:rotate-90;
   }
 }
 
