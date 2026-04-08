@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Press_Start_2P, VT323, Orbitron } from "next/font/google";
+import { Press_Start_2P, Saira_Stencil_One } from "next/font/google";
 import "./globals.css";
 import NavBar from "./sections/NavBar";
 
@@ -9,16 +9,10 @@ const pressStart2P = Press_Start_2P({
   variable: "--font-main",
 });
 
-const vt323 = VT323({
+const sairaStencilOne = Saira_Stencil_One({
   weight: "400",
   subsets: ["latin"],
-  variable: "--font-vt323",
-});
-
-const orbitron = Orbitron({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-orbitron",
+  variable: "--font-body",
 });
 
 export const metadata: Metadata = {
@@ -34,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <body
-        className={`${pressStart2P.variable} ${vt323.variable} ${orbitron.variable} flex min-h-full flex-col`}
+        className={`${pressStart2P.variable} ${sairaStencilOne.variable} flex min-h-full flex-col`}
       >
         <NavBar />
         {children}
