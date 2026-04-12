@@ -4,4 +4,14 @@ type LinkType = {
   id: string;
 };
 
-export type { LinkType };
+type SerieProps = {
+  title: string;
+  description: string;
+  genre: string;
+  imageUrl: string;
+  spanColor: string;
+  spanTextColor: string;
+  id: string;
+};
+
+export type { LinkType, SerieProps };
