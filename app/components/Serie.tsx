@@ -14,7 +14,7 @@ export default function Serie({
   spanTextColor,
 }: SerieProps): JSX.Element {
   return (
-    <div className="font-body mt-10 flex h-max w-fit flex-col items-center gap-5 md:mx-auto">
+    <div className="font-body mt-10 flex h-max w-fit flex-col items-center gap-5">
       <div className="relative h-96 w-64 shrink-0 overflow-hidden border border-white">
         <span
           style={{ backgroundColor: spanColor, color: spanTextColor }}

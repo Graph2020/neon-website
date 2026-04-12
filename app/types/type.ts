@@ -12,6 +12,7 @@ type SerieProps = {
   spanColor: string;
   spanTextColor: string;
   id: string;
+  year: number;
 };
 
 export type { LinkType, SerieProps };
