@@ -15,4 +15,10 @@ type SerieProps = {
   year: number;
 };
 
-export type { LinkType, SerieProps };
+type ReviewProps = {
+  title: string;
+  icon: string;
+  review: string;
+};
+
+export type { LinkType, SerieProps, ReviewProps };

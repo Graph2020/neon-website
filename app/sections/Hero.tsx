@@ -26,7 +26,7 @@ export default function Hero(): JSX.Element {
   ));
 
   return (
-    <main className="center-element relative min-h-screen w-full flex-col gap-5 overflow-hidden p-10">
+    <main className="page-container">
       {/* <video
         autoPlay
         loop
@@ -42,7 +42,7 @@ export default function Hero(): JSX.Element {
         handleFilter={setSerieYear}
         handleGenreFilter={setSerieGenre}
       />
-      <div className="flex w-full flex-col items-center gap-5 p-1 md:flex-row md:flex-wrap md:items-baseline md:justify-center">
+      <div className="flex w-full flex-col items-center gap-5 p-1 md:flex-row md:flex-wrap md:items-stretch md:justify-center">
         {displaySeries}
       </div>
     </main>

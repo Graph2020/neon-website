@@ -1,9 +1,5 @@
 import type { Metadata } from "next";
-import {
-  Press_Start_2P,
-  Saira_Stencil_One,
-  Montserrat,
-} from "next/font/google";
+import { Press_Start_2P, Pixelify_Sans, Montserrat } from "next/font/google";
 import "./globals.css";
 import NavBar from "./sections/NavBar";
 import Footer from "./sections/Footer";
@@ -14,7 +10,7 @@ const pressStart2P = Press_Start_2P({
   variable: "--font-main",
 });
 
-const sairaStencilOne = Saira_Stencil_One({
+const pixelifySans = Pixelify_Sans({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-headline",
@@ -39,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <body
-        className={`${pressStart2P.variable} ${monsterrat.variable} ${sairaStencilOne.variable} flex min-h-full flex-col`}
+        className={`${pressStart2P.variable} ${monsterrat.variable} ${pixelifySans.variable} flex min-h-full flex-col`}
       >
         <NavBar />
         {children}
