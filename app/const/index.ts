@@ -1,6 +1,11 @@
 import { nanoid } from "nanoid";
-import type { LinkType } from "../types/type";
+import type { ExpCard, LinkType } from "../types/type";
 import type { SerieProps } from "../types/type";
+
+import { RiNetflixFill } from "react-icons/ri";
+import { GiFilmProjector } from "react-icons/gi";
+import { IoLogoAndroid } from "react-icons/io";
+
 const NavLinks: LinkType[] = [
   {
     name: "Home",
@@ -74,4 +79,34 @@ const series: SerieProps[] = [
   },
 ];
 
-export { NavLinks, series };
+const expCards: ExpCard[] = [
+  {
+    starImage: "/one-star.png",
+    review:
+      "This guy, was the biggest nightmare that we worked with, how did we even stumble upon him? Someone, curse this day! I will never forgive myself for letting him into our cozy team, no!!!!! Never ever",
+    company: RiNetflixFill,
+    companyName: "Netflix",
+    logoColor: "#E50914",
+    spanColor: "#FFFFFF",
+  },
+  {
+    starImage: "/one-star.png",
+    review:
+      "I remember my company one day asked this guy to make some simple website for us, I wish I didn't remember",
+    company: GiFilmProjector,
+    companyName: "Hollywood",
+    logoColor: "#FFFFFF",
+    spanColor: "#FFFFFF",
+  },
+  {
+    starImage: "/one-star.png",
+    review:
+      "Somehow this guy appeared in our company, If I knew what disaster awaits I would take actions for him to dissapear",
+    company: IoLogoAndroid,
+    companyName: "Android",
+    logoColor: "#3DDC84",
+    spanColor: "#FFFFFF",
+  },
+];
+
+export { NavLinks, series, expCards };

@@ -1,3 +1,6 @@
+import { ReactNode } from "react";
+import { IconType } from "react-icons";
+
 type LinkType = {
   name: string;
   href: string;
@@ -21,4 +24,15 @@ type ReviewProps = {
   review: string;
 };
 
-export type { LinkType, SerieProps, ReviewProps };
+type ExpCard = {
+  starImage: "/one-star.png";
+  review: string;
+  company?: IconType;
+  companyName?: string;
+  personName?: string;
+  personImage?: string;
+  logoColor?: string;
+  spanColor?: string;
+};
+
+export type { LinkType, SerieProps, ReviewProps, ExpCard };

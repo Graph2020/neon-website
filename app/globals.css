@@ -14,7 +14,7 @@
 }
 
 @utility page-container {
-  @apply center-element relative min-h-screen w-full flex-col gap-5 overflow-hidden p-10;
+  @apply center-element relative min-h-screen w-full flex-col gap-5 overflow-hidden px-4 py-10;
 }
 
 @utility butger-line {
@@ -51,6 +51,10 @@
     @apply font-headline mt-1 w-fit cursor-pointer border border-white px-4 py-2 text-white uppercase;
     @apply transition-colors duration-300 ease-in-out;
     @apply hover:bg-white hover:text-black;
+  }
+  .review-card {
+    @apply font-body flex flex-col items-start justify-between gap-3 rounded-xl bg-slate-900/80 p-4 text-white;
+    @apply min-h-56 flex-1 sm:min-h-72 sm:w-80 sm:flex-0 sm:justify-evenly sm:text-xl lg:h-64 lg:w-80;
   }
 }
 
