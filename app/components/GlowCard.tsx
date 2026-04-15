@@ -18,7 +18,7 @@ export default function GlowCard({
       <div className="flex flex-col gap-3">
         <Image
           src={starImage}
-          className="-my-6 -ml-2.5 h-auto w-20 object-cover object-left sm:w-28"
+          className="-my-6 -ml-2.5 h-auto w-28 object-cover object-left sm:w-32"
           alt="Star"
           width={100}
           height={12}
@@ -30,7 +30,7 @@ export default function GlowCard({
           <Icon style={{ color: logoColor }} className="shrink-0 text-3xl" />
         )}{" "}
         {Icon && (
-          <span className="text-base sm:text-lg" style={{ color: spanColor }}>
+          <span className="span-review" style={{ color: spanColor }}>
             {companyName}
           </span>
         )}
@@ -38,7 +38,7 @@ export default function GlowCard({
           <Image src={personImage} alt="Person" width={32} height={32} />
         )}
         {personName && (
-          <span className="text-base sm:text-lg" style={{ color: spanColor }}>
+          <span className="span-review" style={{ color: spanColor }}>
             {" "}
             {personName}
           </span>

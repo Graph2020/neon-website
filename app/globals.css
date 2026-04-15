@@ -36,6 +36,10 @@
   @apply flex items-center gap-2 text-sm text-gray-700;
 }
 
+@utility span-review {
+  @apply font-headline pl-1 text-base font-extrabold sm:text-lg md:text-xl;
+}
+
 @layer components {
   .filter-btn {
     @apply w-fit cursor-pointer border border-white px-2.5 tracking-wider text-white uppercase;
@@ -54,7 +58,8 @@
   }
   .review-card {
     @apply font-body flex flex-col items-start justify-between gap-3 rounded-xl bg-slate-900/80 p-4 text-white;
-    @apply min-h-56 flex-1 sm:min-h-72 sm:w-80 sm:flex-0 sm:justify-evenly sm:text-xl lg:h-64 lg:w-80;
+    @apply min-h-56 flex-1 sm:min-h-80 sm:w-80 sm:flex-0 sm:justify-evenly sm:text-xl;
+    @apply lg:h-64 lg:w-lg;
   }
 }
 

@@ -4,11 +4,13 @@ import Review from "../components/Review";
 import Carousel from "../components/Carousell";
 import TitleHeader from "../components/TitleHeader";
 import GlowCard from "../components/GlowCard";
-import { expCards } from "../const";
+import { expCards, imageArray } from "../const";
+import Image from "next/image";
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
+import WorkShowCase from "../components/WorkShowCase";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Gallery() {
@@ -22,11 +24,11 @@ export default function Gallery() {
       gsap.fromTo(
         spanRef.current,
         {
-          scaleY: 0,
-          transformOrigin: "top",
+          backgroundSize: "100% 0%",
+          backgroundRepeat: "no-repeat",
         },
         {
-          scaleY: 1,
+          backgroundSize: "100% 100%",
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top 80%",
@@ -36,6 +38,20 @@ export default function Gallery() {
           },
         },
       );
+
+      const icons = Array.from(spanRef.current.children);
+
+      icons.forEach((icon) => {
+        gsap.from(icon, {
+          scale: 0,
+          opacity: 0,
+          scrollTrigger: {
+            trigger: icon,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        });
+      });
     },
     { scope: containerRef },
   );
@@ -52,7 +68,7 @@ export default function Gallery() {
     />
   ));
   return (
-    <section className="page-container font-body">
+    <section className="page-container font-body overflow-x-hidden overflow-y-hidden">
       <header className="space-y-2 text-center">
         <h1 className="text-title text-blue-300 [--title-color:lightblue]">
           Gallery
@@ -92,12 +108,37 @@ export default function Gallery() {
         sub="💼 My Experience"
       />
 
-      <div ref={containerRef} className="flex w-full gap-3">
-        <div className="flex w-full flex-col gap-3">{displayCompanyCards}</div>
+      <div ref={containerRef} className="flex w-full justify-between gap-3">
+        <div className="flex flex-1 flex-col gap-3">{displayCompanyCards}</div>
+
+        <div className="hidden flex-1 flex-col justify-around gap-3 border border-white md:flex lg:hidden">
+          {imageArray.map((imagePath, index) => (
+            <Image
+              key={index}
+              src={`${imagePath}`}
+              alt={"awfull website"}
+              width={500}
+              height={500}
+              className="min-h-0 w-full flex-1 object-contain"
+            />
+          ))}
+        </div>
+
+        <WorkShowCase />
+
         <span
           ref={spanRef}
-          className="via-main w-2 shrink-0 scale-y-0 rounded-full bg-gradient-to-b from-rose-700 to-emerald-500"
-        ></span>
+          className="via-secondary relative flex w-2 shrink-0 flex-col items-center justify-around rounded-full bg-gradient-to-b from-rose-700 to-emerald-500 bg-no-repeat sm:justify-evenly md:mr-5"
+        >
+          {expCards.map(({ company: CompanyIcon, logoColor }, index) => (
+            <div
+              className="center-element size-6 rounded-full bg-slate-900 text-2xl text-white sm:size-12"
+              key={index}
+            >
+              {CompanyIcon && <CompanyIcon style={{ color: logoColor }} />}
+            </div>
+          ))}
+        </span>
       </div>
     </section>
   );

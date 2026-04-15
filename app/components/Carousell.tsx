@@ -11,7 +11,7 @@ export default function Carousel({
       <div className="relative size-32 shrink-0" key={index}>
         <Image
           fill={true}
-          className="object-contain"
+          className="size-12 object-contain"
           src={`/icons/company-logo-${index + 1}.png`}
           alt={`company logo ${index + 1}`}
         />

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { nanoid } from "nanoid";
 import type { ExpCard, LinkType } from "../types/type";
 import type { SerieProps } from "../types/type";
@@ -83,7 +85,7 @@ const expCards: ExpCard[] = [
   {
     starImage: "/one-star.png",
     review:
-      "This guy, was the biggest nightmare that we worked with, how did we even stumble upon him? Someone, curse this day! I will never forgive myself for letting him into our cozy team, no!!!!! Never ever",
+      "This guy, was the biggest nightmare that we worked with, how did we even stumble upon him? Someone, curse this day! I will never forgive myself for letting him into team",
     company: RiNetflixFill,
     companyName: "Netflix",
     logoColor: "#E50914",
@@ -92,7 +94,7 @@ const expCards: ExpCard[] = [
   {
     starImage: "/one-star.png",
     review:
-      "I remember my company one day asked this guy to make some simple website for us, I wish I didn't remember",
+      "I remember my company one day asked this guy to make some simple website for us, I wish I didn't remember, yet I remember so vividly the hatred that I felt towards him..",
     company: GiFilmProjector,
     companyName: "Hollywood",
     logoColor: "#FFFFFF",
@@ -101,7 +103,7 @@ const expCards: ExpCard[] = [
   {
     starImage: "/one-star.png",
     review:
-      "Somehow this guy appeared in our company, If I knew what disaster awaits I would take actions for him to dissapear",
+      "Somehow this guy appeared in our company, If I knew what disaster awaits I would take actions for him to dissapear. I thought I was peacefull guy, then I met this individual",
     company: IoLogoAndroid,
     companyName: "Android",
     logoColor: "#3DDC84",
@@ -109,4 +111,10 @@ const expCards: ExpCard[] = [
   },
 ];
 
-export { NavLinks, series, expCards };
+const imageArray = [
+  "/images/awfull-1.png",
+  "/images/awfull-2.png",
+  "/images/awfull-3.png",
+];
+
+export { NavLinks, series, expCards, imageArray };
