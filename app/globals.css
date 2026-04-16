@@ -26,6 +26,10 @@
   text-shadow: 4px 4px 0 var(--title-color, var(--color-main));
 }
 
+@utility mini-title {
+  @apply text-secondary font-headline text-center text-2xl sm:text-3xl;
+}
+
 @utility nav-link {
   @apply cursor-pointer text-sm text-white;
   @apply transition-colors duration-300 ease-in-out;

@@ -11,6 +11,8 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import WorkShowCase from "../components/WorkShowCase";
+import TitleAnimation from "../animation/TitleAnimation";
+import MiniHeadlines from "../animation/MiniHeadlines";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Gallery() {
@@ -34,14 +36,13 @@ export default function Gallery() {
             start: "top 80%",
             end: "bottom 20%",
             scrub: 1,
-            markers: true,
           },
         },
       );
 
-      const icons = Array.from(spanRef.current.children);
+      const icons = gsap.utils.toArray(".company-icon");
 
-      icons.forEach((icon) => {
+      icons.forEach((icon: any) => {
         gsap.from(icon, {
           scale: 0,
           opacity: 0,
@@ -70,12 +71,14 @@ export default function Gallery() {
   return (
     <section className="page-container font-body overflow-x-hidden overflow-y-hidden">
       <header className="space-y-2 text-center">
-        <h1 className="text-title text-blue-300 [--title-color:lightblue]">
-          Gallery
-        </h1>
-        <h3 className="text-secondary font-headline text-2xl md:text-3xl">
-          What other people see in our art?
-        </h3>
+        <TitleAnimation>
+          <h1 className="text-title text-blue-300 [--title-color:lightblue]">
+            Gallery
+          </h1>
+        </TitleAnimation>
+        <MiniHeadlines>
+          <h2 className="mini-title">What other people see in our art?</h2>
+        </MiniHeadlines>
 
         <div className="my-10 flex flex-col gap-3 md:flex-row">
           <Review
@@ -96,9 +99,9 @@ export default function Gallery() {
         </div>
       </header>
 
-      <h2 className="text-secondary font-headline text-lg sm:text-2xl lg:text-3xl">
-        These companies hate me!
-      </h2>
+      <MiniHeadlines>
+        <h2 className="mini-title text-center">These companies hate me!</h2>
+      </MiniHeadlines>
 
       <Carousel />
       <Carousel reverse={true} />
@@ -111,7 +114,7 @@ export default function Gallery() {
       <div ref={containerRef} className="flex w-full justify-between gap-3">
         <div className="flex flex-1 flex-col gap-3">{displayCompanyCards}</div>
 
-        <div className="hidden flex-1 flex-col justify-around gap-3 border border-white md:flex lg:hidden">
+        <div className="mr-2 hidden flex-1 flex-col justify-around gap-3 sm:flex lg:hidden">
           {imageArray.map((imagePath, index) => (
             <Image
               key={index}
@@ -128,14 +131,13 @@ export default function Gallery() {
 
         <span
           ref={spanRef}
-          className="via-secondary relative flex w-2 shrink-0 flex-col items-center justify-around rounded-full bg-gradient-to-b from-rose-700 to-emerald-500 bg-no-repeat sm:justify-evenly md:mr-5"
+          className="via-secondary relative flex w-2 shrink-0 flex-col items-center gap-3 rounded-full bg-gradient-to-b from-rose-700 to-emerald-500 bg-no-repeat md:mr-5"
         >
           {expCards.map(({ company: CompanyIcon, logoColor }, index) => (
-            <div
-              className="center-element size-6 rounded-full bg-slate-900 text-2xl text-white sm:size-12"
-              key={index}
-            >
-              {CompanyIcon && <CompanyIcon style={{ color: logoColor }} />}
+            <div key={index} className="flex flex-1 flex-col justify-center">
+              <div className="company-icon center-element size-6 shrink-0 rounded-full bg-slate-900 text-2xl text-white sm:size-12">
+                {CompanyIcon && <CompanyIcon style={{ color: logoColor }} />}
+              </div>
             </div>
           ))}
         </span>

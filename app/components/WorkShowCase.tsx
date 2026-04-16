@@ -6,6 +6,7 @@ import { useRef, useState, type JSX } from "react";
 import Image from "next/image";
 
 import { expCards, imageArray } from "../const";
+import MiniHeadlines from "../animation/MiniHeadlines";
 export default function WorkShowCase(): JSX.Element {
   const displayImages = imageArray.map((imagePath, index) => (
     <Image
@@ -79,14 +80,15 @@ export default function WorkShowCase(): JSX.Element {
         className="pointer-events-none fixed top-0 left-0 z-50 scale-0 rounded-xl object-cover opacity-0 shadow-2xl"
       />
       {expCards.map(({ companyName }, index) => (
-        <p
-          onMouseEnter={() => handleMouseEnter(imageArray[index])}
-          onMouseLeave={handleMouseLeave}
-          key={companyName}
-          className="font-main cursor-pointer text-3xl font-bold text-white"
-        >
-          My work at {companyName}
-        </p>
+        <MiniHeadlines key={index}>
+          <p
+            onMouseEnter={() => handleMouseEnter(imageArray[index])}
+            onMouseLeave={handleMouseLeave}
+            className="font-main cursor-pointer text-center text-3xl font-bold text-white"
+          >
+            My work at {companyName}
+          </p>
+        </MiniHeadlines>
       ))}
     </div>
   );

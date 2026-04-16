@@ -1,7 +1,13 @@
-import type { JSX } from "react";
+"use client";
+import { useRef, type JSX } from "react";
 import type { ExpCard } from "../types/type";
 
 import Image from "next/image";
+
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger);
 
 export default function GlowCard({
   starImage,
@@ -13,8 +19,24 @@ export default function GlowCard({
   personName,
   personImage,
 }: ExpCard): JSX.Element {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    if (!cardRef.current) return;
+
+    gsap.from(cardRef.current, {
+      opacity: 0,
+      x: -50,
+      ease: "sine.inOut",
+      scrollTrigger: {
+        trigger: cardRef.current,
+        start: "top 80%",
+      },
+    });
+  });
+
   return (
-    <div className="review-card">
+    <div ref={cardRef} className="review-card">
       <div className="flex flex-col gap-3">
         <Image
           src={starImage}
