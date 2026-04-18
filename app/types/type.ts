@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 import { IconType } from "react-icons";
 
 type LinkType = {
@@ -45,4 +45,19 @@ type SwordProps = {
   textColor?: string;
 };
 
-export type { LinkType, SerieProps, ReviewProps, ExpCard, SwordProps };
+type ModelsType = {
+  id: string;
+  companyName: string;
+  hateReason: string;
+  model: React.ElementType;
+  scale: number;
+};
+
+export type {
+  LinkType,
+  SerieProps,
+  ReviewProps,
+  ExpCard,
+  SwordProps,
+  ModelsType,
+};

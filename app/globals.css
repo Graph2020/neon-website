@@ -44,6 +44,10 @@
   @apply font-headline pl-1 text-base font-extrabold sm:text-lg md:text-xl;
 }
 
+@utility model-wrapper {
+  @apply flex flex-col gap-3 rounded-lg bg-slate-900 p-4 text-center text-white xl:rounded-xl;
+}
+
 @layer components {
   .filter-btn {
     @apply w-fit cursor-pointer border border-white px-2.5 tracking-wider text-white uppercase;
@@ -64,6 +68,10 @@
     @apply font-body flex flex-col items-start justify-between gap-3 rounded-xl bg-slate-900/80 p-4 text-white;
     @apply min-h-56 flex-1 sm:min-h-80 sm:w-80 sm:flex-0 sm:justify-evenly sm:text-xl;
     @apply lg:h-64 lg:w-lg;
+  }
+  .contact-input {
+    @apply focus:ring-main w-full rounded-md bg-slate-700 px-3 py-1.5 text-white outline-none focus:ring-1;
+    @apply transition-colors duration-300 ease-in-out;
   }
 }
 

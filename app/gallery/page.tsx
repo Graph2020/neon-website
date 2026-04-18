@@ -4,7 +4,7 @@ import Review from "../components/Review";
 import Carousel from "../components/Carousell";
 import TitleHeader from "../components/TitleHeader";
 import GlowCard from "../components/GlowCard";
-import { expCards, imageArray } from "../const";
+import { expCards, imageArray, modelsElements } from "../const";
 import Image from "next/image";
 
 import gsap from "gsap";
@@ -13,6 +13,9 @@ import { ScrollTrigger } from "gsap/all";
 import WorkShowCase from "../components/WorkShowCase";
 import TitleAnimation from "../animation/TitleAnimation";
 import MiniHeadlines from "../animation/MiniHeadlines";
+
+import ThreeModelsHate from "../sections/ThreeModelsHate";
+import Contact from "../sections/Contact";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -70,7 +73,7 @@ export default function Gallery() {
     />
   ));
   return (
-    <section className="page-container font-body overflow-x-hidden overflow-y-hidden">
+    <section className="page-container font-body overflow-x-hidden">
       <header className="space-y-2 text-center">
         <TitleAnimation>
           <h1 className="text-title text-blue-300 [--title-color:lightblue]">
@@ -146,11 +149,25 @@ export default function Gallery() {
 
       <div className="center-element w-full flex-col gap-10">
         <TitleHeader
-          title="Work with me and you'll be depresed!"
-          sub="☎️ Contact info"
+          title="You'll hate me like those companies!"
+          sub="💯 Like them"
         />
-        <div className="container min-h-96 border border-white bg-slate-900"></div>
+        <div className="center-element flex w-full flex-col gap-3 md:flex-row">
+          {modelsElements.map(
+            ({ companyName, hateReason, model, scale, id }) => (
+              <ThreeModelsHate
+                key={id}
+                companyName={companyName}
+                hateReason={hateReason}
+                model={model}
+                scale={scale}
+              />
+            ),
+          )}
+        </div>
       </div>
+
+      <Contact />
     </section>
   );
 }

@@ -1,12 +1,15 @@
 import Image from "next/image";
 
 import { nanoid } from "nanoid";
-import type { ExpCard, LinkType } from "../types/type";
+import type { ExpCard, LinkType, ModelsType } from "../types/type";
 import type { SerieProps } from "../types/type";
 
 import { RiNetflixFill } from "react-icons/ri";
 import { GiFilmProjector } from "react-icons/gi";
 import { IoLogoAndroid } from "react-icons/io";
+import { NetflixModel } from "../components/models/NetflixModel";
+import { FacebookModel } from "../components/models/FacebookModel";
+import { NikeModel } from "../components/models/NikeModel";
 
 const NavLinks: LinkType[] = [
   {
@@ -117,4 +120,28 @@ const imageArray = [
   "/images/awfull-3.png",
 ];
 
-export { NavLinks, series, expCards, imageArray };
+const modelsElements: ModelsType[] = [
+  {
+    id: nanoid(),
+    companyName: "Netflix",
+    hateReason: "Slandered me",
+    model: NetflixModel,
+    scale: 60,
+  },
+  {
+    id: nanoid(),
+    companyName: "Facebook",
+    hateReason: "Hired hitman to kill me",
+    model: FacebookModel,
+    scale: 2,
+  },
+  {
+    id: nanoid(),
+    companyName: "Nike",
+    hateReason: "Cursed me",
+    model: NikeModel,
+    scale: 1,
+  },
+];
+
+export { NavLinks, series, expCards, imageArray, modelsElements };
