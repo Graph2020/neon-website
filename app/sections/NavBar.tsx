@@ -8,7 +8,7 @@ export default function NavBar(): JSX.Element {
   const pathname = usePathname();
 
   return (
-    <nav className="font-main relative flex h-20 w-full items-center justify-between border-b-4 border-b-white p-2 sm:p-5">
+    <nav className="font-main relative z-50 flex h-20 w-full items-center justify-between border-b-4 border-b-white p-2 sm:p-5">
       <div className="flex items-center gap-3">
         <div className="icon-container">
           <GiVineFlower />

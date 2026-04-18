@@ -33,9 +33,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full antialiased">
+    <html lang="en" className="antialiased">
       <body
-        className={`${pressStart2P.variable} ${monsterrat.variable} ${pixelifySans.variable} flex min-h-full flex-col`}
+        className={`${pressStart2P.variable} ${monsterrat.variable} ${pixelifySans.variable} flex min-h-screen flex-col overflow-x-hidden`}
       >
         <NavBar />
         {children}

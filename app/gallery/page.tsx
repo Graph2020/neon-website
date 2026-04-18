@@ -13,6 +13,7 @@ import { ScrollTrigger } from "gsap/all";
 import WorkShowCase from "../components/WorkShowCase";
 import TitleAnimation from "../animation/TitleAnimation";
 import MiniHeadlines from "../animation/MiniHeadlines";
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Gallery() {
@@ -34,7 +35,7 @@ export default function Gallery() {
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top 80%",
-            end: "bottom 20%",
+            end: "bottom 60%",
             scrub: 1,
           },
         },
@@ -141,6 +142,14 @@ export default function Gallery() {
             </div>
           ))}
         </span>
+      </div>
+
+      <div className="center-element w-full flex-col gap-10">
+        <TitleHeader
+          title="Work with me and you'll be depresed!"
+          sub="☎️ Contact info"
+        />
+        <div className="container min-h-96 border border-white bg-slate-900"></div>
       </div>
     </section>
   );

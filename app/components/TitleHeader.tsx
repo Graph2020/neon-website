@@ -17,18 +17,21 @@ export default function TitleHeader({
   sub: string;
 }): JSX.Element {
   const titleRef = useRef(null);
-  useGSAP(() => {
-    if (!titleRef.current) return;
+  useGSAP(
+    () => {
+      if (!titleRef.current) return;
 
-    gsap.from(".span-work", {
-      opacity: 0,
-      y: 50,
-      scrollTrigger: {
-        trigger: titleRef.current,
-        start: "top 80%",
-      },
-    });
-  });
+      gsap.from(".span-work", {
+        opacity: 0,
+        y: 50,
+        scrollTrigger: {
+          trigger: titleRef.current,
+          start: "top 80%",
+        },
+      });
+    },
+    { scope: titleRef },
+  );
 
   return (
     <div

@@ -35,4 +35,14 @@ type ExpCard = {
   spanColor?: string;
 };
 
-export type { LinkType, SerieProps, ReviewProps, ExpCard };
+type SwordProps = {
+  title: string;
+  description: string;
+  imageUrl: string;
+  firstColor?: string;
+  secondColor?: string;
+  thirdColor?: string;
+  textColor?: string;
+};
+
+export type { LinkType, SerieProps, ReviewProps, ExpCard, SwordProps };

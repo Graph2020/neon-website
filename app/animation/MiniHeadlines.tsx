@@ -31,8 +31,6 @@ export default function MiniHeadlines({
       scrollTrigger: {
         trigger: textRef.current,
         start: "top 80%",
-
-        markers: true,
       },
     });
   });
