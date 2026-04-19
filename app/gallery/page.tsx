@@ -167,6 +167,11 @@ export default function Gallery() {
         </div>
       </div>
 
+      <TitleHeader
+        title="Collaborate with me, and you'll regret it!"
+        sub="☎️ Contact me"
+      />
+
       <Contact />
     </section>
   );

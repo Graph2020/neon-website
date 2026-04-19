@@ -1,8 +1,18 @@
 import type { JSX } from "react";
 import { BsArrowDown } from "react-icons/bs";
+import { Canvas } from "@react-three/fiber";
+import {
+  Center,
+  ContactShadows,
+  Environment,
+  Float,
+  OrbitControls,
+} from "@react-three/drei";
+import { ComputerContact } from "../components/models/ComputerContact";
+
 export default function Contact(): JSX.Element {
   return (
-    <div className="center-element font-body w-full flex-col rounded-lg sm:w-xl sm:flex-row">
+    <div className="font-body flex flex-1 flex-col items-stretch rounded-lg sm:grid sm:w-xl sm:grid-cols-2 sm:gap-3 md:w-full">
       <div className="flex w-full flex-col gap-3 rounded-lg bg-slate-900 px-3 py-4">
         <MessageInput
           id="name"
@@ -25,6 +35,31 @@ export default function Contact(): JSX.Element {
           placeHolder="How can I help you?"
         />
         <Button />
+      </div>
+
+      <div className="relative h-64 w-full flex-1 cursor-grab overflow-hidden rounded-lg active:cursor-grabbing sm:h-auto">
+        <Canvas camera={{ position: [0, 0, 2] }}>
+          <ambientLight intensity={1} />
+
+          <color attach="background" args={["#e67e22"]} />
+
+          <OrbitControls
+            minPolarAngle={Math.PI / 3}
+            maxPolarAngle={Math.PI / 2}
+            enableZoom={false}
+          />
+
+          <Center position={[0, 0, 0]}>
+            <ComputerContact scale={0.02} />
+          </Center>
+
+          <ContactShadows
+            far={4}
+            scale={8}
+            position={[0, -0.8, 0.1]}
+            opacity={0.3}
+          />
+        </Canvas>
       </div>
     </div>
   );
