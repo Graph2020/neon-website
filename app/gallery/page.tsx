@@ -152,7 +152,7 @@ export default function Gallery() {
           title="You'll hate me like those companies!"
           sub="💯 Like them"
         />
-        <div className="center-element flex w-full flex-col gap-3 md:flex-row">
+        <div className="grid w-full grid-cols-1 gap-3 px-4 md:grid-cols-3">
           {modelsElements.map(
             ({ companyName, hateReason, model, scale, id }) => (
               <ThreeModelsHate

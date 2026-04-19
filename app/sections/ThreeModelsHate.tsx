@@ -13,7 +13,7 @@ export default function ThreeModelsHate({
 }: withoutId) {
   const Model = model;
   return (
-    <div className="model-wrapper w-72">
+    <div className="model-wrapper w-full md:w-auto md:flex-1">
       <h3 className="text-xl">{companyName}</h3>
 
       <div className="relative h-50 w-full cursor-grab active:cursor-grabbing">

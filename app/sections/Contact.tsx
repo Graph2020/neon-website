@@ -1,9 +1,9 @@
 import type { JSX } from "react";
-
+import { BsArrowDown } from "react-icons/bs";
 export default function Contact(): JSX.Element {
   return (
-    <div className="center-element font-body w-full flex-col rounded-lg border border-white sm:w-xl sm:flex-row">
-      <div className="flex w-1/2 flex-col gap-3 bg-slate-900">
+    <div className="center-element font-body w-full flex-col rounded-lg sm:w-xl sm:flex-row">
+      <div className="flex w-full flex-col gap-3 rounded-lg bg-slate-900 px-3 py-4">
         <MessageInput
           id="name"
           labelName="Name"
@@ -24,6 +24,7 @@ export default function Contact(): JSX.Element {
           inputType="textarea"
           placeHolder="How can I help you?"
         />
+        <Button />
       </div>
     </div>
   );
@@ -47,7 +48,7 @@ function MessageInput({
       </label>
       {inputType === "textarea" ? (
         <textarea
-          className="contact-input"
+          className="contact-input resize-none"
           id={id}
           rows={4}
           placeholder={placeHolder}
@@ -61,5 +62,14 @@ function MessageInput({
         />
       )}
     </>
+  );
+}
+
+function Button() {
+  return (
+    <button className="center-element group w-full cursor-pointer gap-1.5 rounded-sm bg-[#d1e6ff] py-2 font-medium transition-all duration-300 hover:bg-[#d1e6ff]/90 active:scale-95">
+      SEND MESSAGE{" "}
+      <BsArrowDown className="mb-0.5 group-hover:animate-bounce" />{" "}
+    </button>
   );
 }
