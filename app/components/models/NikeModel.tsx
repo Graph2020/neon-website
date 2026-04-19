@@ -1,7 +1,10 @@
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
-export function NikeModel(props) {
+import * as THREE from "three";
+import type { ThreeElements } from "@react-three/fiber";
+
+export function NikeModel(props: ThreeElements["group"]) {
   const { nodes, materials } = useGLTF("/nike_logo_white.glb");
   return (
     <group {...props} dispose={null}>
@@ -18,7 +21,10 @@ export function NikeModel(props) {
                   <mesh
                     castShadow
                     receiveShadow
-                    geometry={nodes.Object_24_lambert1_0_lambert1001_0.geometry}
+                    geometry={
+                      (nodes.Object_24_lambert1_0_lambert1001_0 as THREE.Mesh)
+                        .geometry
+                    }
                     material={materials["lambert1.001"]}
                     position={[-7.048, -0.001, 0]}
                     rotation={[Math.PI / 2, -0.218, 0]}

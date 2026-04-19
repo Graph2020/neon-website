@@ -1,7 +1,10 @@
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
-export function NetflixModel(props) {
+import * as THREE from "three";
+import type { ThreeElements } from "@react-three/fiber";
+
+export function NetflixModel(props: ThreeElements["group"]) {
   const { nodes, materials } = useGLTF("/netflix_symbol.glb");
   return (
     <group {...props} dispose={null}>
@@ -9,7 +12,7 @@ export function NetflixModel(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Curve_SVGMat374_0.geometry}
+          geometry={(nodes.Curve_SVGMat374_0 as THREE.Mesh).geometry}
           material={materials["SVGMat.374"]}
           rotation={[-Math.PI / 2, 0, 0]}
           scale={100}
@@ -17,7 +20,7 @@ export function NetflixModel(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Curve002_SVGMat373_0.geometry}
+          geometry={(nodes.Curve002_SVGMat373_0 as THREE.Mesh).geometry}
           material={materials["SVGMat.373"]}
           rotation={[-Math.PI / 2, 0, 0]}
           scale={100}
@@ -25,7 +28,7 @@ export function NetflixModel(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Curve003_SVGMat373_0.geometry}
+          geometry={(nodes.Curve003_SVGMat373_0 as THREE.Mesh).geometry}
           material={materials["SVGMat.373"]}
           rotation={[-Math.PI / 2, 0, 0]}
           scale={100}

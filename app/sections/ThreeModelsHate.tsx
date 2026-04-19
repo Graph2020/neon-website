@@ -11,7 +11,7 @@ export default function ThreeModelsHate({
   model,
   scale,
 }: withoutId) {
-  const Model = model;
+  const Model = model as React.ComponentType<{ scale: number }>;
   return (
     <div className="model-wrapper w-full md:w-auto md:flex-1">
       <h3 className="text-xl">{companyName}</h3>
