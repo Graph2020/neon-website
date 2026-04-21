@@ -5,6 +5,7 @@ type LinkType = {
   name: string;
   href: string;
   id: string;
+  icon?: IconType;
 };
 
 type SerieProps = {

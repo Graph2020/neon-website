@@ -11,21 +11,27 @@ import { NetflixModel } from "../components/models/NetflixModel";
 import { FacebookModel } from "../components/models/FacebookModel";
 import { NikeModel } from "../components/models/NikeModel";
 
+import { IoHomeSharp } from "react-icons/io5";
+import { RiGalleryFill } from "react-icons/ri";
+import { MdLocalMovies } from "react-icons/md";
 const NavLinks: LinkType[] = [
   {
     name: "Home",
     href: "/",
     id: nanoid(),
+    icon: IoHomeSharp,
   },
   {
     name: "Gallery",
     href: "/gallery",
     id: nanoid(),
+    icon: RiGalleryFill,
   },
   {
     name: "Premiere",
     href: "/premiere",
     id: nanoid(),
+    icon: MdLocalMovies,
   },
 ];
 

@@ -1,11 +1,17 @@
 "use client";
-import type { JSX } from "react";
+import { useState, type JSX } from "react";
 import { GiVineFlower } from "react-icons/gi";
 import { NavLinks } from "../const";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
+import { GiHamburgerMenu } from "react-icons/gi";
+import { GiPauseButton } from "react-icons/gi";
+import Menu from "../components/Menu";
+
 export default function NavBar(): JSX.Element {
   const pathname = usePathname();
+  const [activeMenu, setActiveMenu] = useState<boolean>(false);
 
   return (
     <nav className="font-main relative z-50 flex h-20 w-full items-center justify-between border-b-4 border-b-white p-2 sm:p-5">
@@ -17,11 +23,11 @@ export default function NavBar(): JSX.Element {
       </div>
 
       {/* menu burger */}
-      <button className="relative flex cursor-pointer flex-col gap-2 sm:hidden">
-        <span className="absolute top-1/2 left-1/2 size-12 -translate-1/2 sm:pointer-fine:hidden"></span>
-        <span className="butger-line"></span>
-        <span className="butger-line"></span>
-        <span className="butger-line"></span>
+      <button
+        className="text-main z-40 cursor-pointer text-3xl sm:hidden"
+        onClick={() => setActiveMenu(!activeMenu)}
+      >
+        {activeMenu ? <GiPauseButton /> : <GiHamburgerMenu />}
       </button>
 
       <ul className="hidden gap-3 sm:flex md:pr-5 lg:pr-18">
@@ -38,6 +44,8 @@ export default function NavBar(): JSX.Element {
           );
         })}
       </ul>
+
+      {activeMenu && <Menu />}
 
       <div className="hidden size-12 bg-[url('/giphy.gif')] bg-cover bg-center md:block"></div>
     </nav>

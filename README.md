@@ -20,3 +20,5 @@
 
 4.  In props you can pass whole color instead like text-blue-500 then tailwind will be satisfied instead of text-${color}
 5.  not to forget to put 3d models into public folder / increace scale of 3d model in order to see it / check position
+6.  Fixed breaks out of relative and attaches to monitor
+7.  A little bit more about margin-auto, depends on flex and pushes according to width;
