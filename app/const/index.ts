@@ -144,4 +144,18 @@ const modelsElements: ModelsType[] = [
   },
 ];
 
-export { NavLinks, series, expCards, imageArray, modelsElements };
+export const titleAnimationAndFilterAnimation = {
+  opacity: 0,
+  y: 50,
+  stagger: 0.1,
+  ease: "power3.out",
+};
+
+export {
+  NavLinks,
+  series,
+  expCards,
+  imageArray,
+  modelsElements,
+  titleAnimationAndFilterAnimation,
+};

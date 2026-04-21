@@ -2,8 +2,13 @@ import type { JSX } from "react";
 import type { SerieProps } from "../types/type";
 
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
 import { CiPlay1 } from "react-icons/ci";
+
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Serie({
   title,
@@ -13,8 +18,29 @@ export default function Serie({
   spanColor,
   spanTextColor,
 }: SerieProps): JSX.Element {
+  const serieRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      gsap.from(serieRef.current, {
+        opacity: 0,
+        y: 50,
+        ease: "power3.out",
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: serieRef.current,
+          start: "top 80%",
+        },
+      });
+    },
+    { scope: serieRef },
+  );
+
   return (
-    <div className="font-body mt-10 flex h-full w-fit flex-col items-center gap-5">
+    <div
+      ref={serieRef}
+      className="serie-item font-body mt-10 flex h-full w-fit flex-col items-center gap-5"
+    >
       <div className="relative h-96 w-64 shrink-0 overflow-hidden border border-white">
         <span
           style={{ backgroundColor: spanColor, color: spanTextColor }}

@@ -28,18 +28,9 @@ export default function Hero(): JSX.Element {
 
   return (
     <main className="page-container">
-      {/* <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 -z-10 h-full w-full object-cover opacity-50"
-      >
-        <source src="/videos/neonCar-mobile.mp4" type="video/mp4" />
-      </video> */}
       <TitleAnimation>
-        <h1 className="text-title flex flex-col sm:flex-row">
-          <span className="mr-2 md:mr-10">Neon</span> <span>Watching</span>
+        <h1 className="text-title flex flex-col sm:flex-row md:flex-col lg:flex-row">
+          <span className="mr-2 lg:mr-10">Neon</span> <span>Watching</span>
         </h1>
       </TitleAnimation>
 

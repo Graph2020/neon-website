@@ -9,12 +9,32 @@ export default function Premiere() {
 
       {/* content of a page  */}
 
-      <div className="page-container">
-        <div className="my-24">
+      <div className="page-container z-0">
+        <video
+          className="absolute inset-0 -z-10 h-full w-full bg-center object-cover opacity-50"
+          src="/videos/pixel-art-snow.mp4"
+          autoPlay
+          muted
+          loop
+        />
+
+        <div className="mt-24">
           <h1 className="text-title [--title-color:lightblue]">
             The Ice Sword
           </h1>
           <h2 className="mini-title">The worst movie you&apos;ll ever see</h2>
+        </div>
+
+        <div>
+          <div>
+            <p className="font-body text-white-50 text-center text-lg">
+              What do you know about despair? And the evil villian that bring
+              demise everywhere? I betcha, you know nothing, because you
+              haven&apos;t seen this absolute cinema production that gonna ruin
+              your entire life! So what are you waiting for? DIVE INTO STORY
+              RIGHT NOW
+            </p>
+          </div>
         </div>
 
         <div className="flex flex-col gap-3 lg:flex-row">

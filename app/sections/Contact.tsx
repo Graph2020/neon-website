@@ -102,7 +102,7 @@ function MessageInput({
 
 function Button() {
   return (
-    <button className="center-element group w-full cursor-pointer gap-1.5 rounded-sm bg-[#d1e6ff] py-2 font-medium transition-all duration-300 hover:bg-[#d1e6ff]/90 active:scale-95">
+    <button className="center-element group bg-white-50 w-full cursor-pointer gap-1.5 rounded-sm py-2 font-medium transition-all duration-300 hover:bg-[#d1e6ff]/90 active:scale-95">
       SEND MESSAGE{" "}
       <BsArrowDown className="mb-0.5 group-hover:animate-bounce" />{" "}
     </button>

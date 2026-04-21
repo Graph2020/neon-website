@@ -4,6 +4,7 @@
   --color-main: #ff00ff;
   --color-secondary: #00ffff;
   --color-pixelyellow: #ffff00;
+  --color-white-50: #d1e6ff;
   --font-main: var(--font-main), cursive;
   --font-body: var(--font-body);
   --font-headline: var(--font-headline);
@@ -22,7 +23,7 @@
 }
 
 @utility text-title {
-  @apply font-main text-center text-4xl text-white uppercase md:text-7xl;
+  @apply font-main text-center text-3xl text-white uppercase md:text-7xl;
   text-shadow: 4px 4px 0 var(--title-color, var(--color-main));
 }
 
@@ -46,6 +47,10 @@
 
 @utility model-wrapper {
   @apply flex flex-col gap-3 rounded-lg bg-slate-900 p-4 text-center text-white xl:rounded-xl;
+}
+
+@utility filter-text {
+  @apply text-lg text-gray-500 uppercase;
 }
 
 @layer components {

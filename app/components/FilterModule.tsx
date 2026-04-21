@@ -1,6 +1,12 @@
-import type { JSX } from "react";
+"use client";
+import { useRef, type JSX } from "react";
 
-import React from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { SplitText } from "gsap/all";
+import { titleAnimationAndFilterAnimation } from "../const";
+
+gsap.registerPlugin(SplitText);
 
 export default function FilterModule({
   handleFilter,
@@ -9,10 +15,35 @@ export default function FilterModule({
   handleFilter: (year: "oldest" | "newest" | null) => void;
   handleGenreFilter: (genre: string | null) => void;
 }): JSX.Element {
+  const selectRef = useRef<HTMLSelectElement>(null);
+  useGSAP(() => {
+    gsap.from(".btn-hero", {
+      scale: 0,
+      stagger: 0.2,
+      ease: "back.out(1.7)",
+      duration: 0.5,
+    });
+
+    const splitedText = new SplitText(".filter-text", { type: "chars" });
+
+    gsap.from(splitedText.chars, {
+      ...titleAnimationAndFilterAnimation,
+    });
+
+    gsap.from(selectRef.current, {
+      scale: 0,
+      ease: "back.out(1.7)",
+      duration: 0.5,
+      delay: 1,
+    });
+  });
+
   return (
     <div className="border-main font-headline mr-5 flex h-56 w-full flex-col items-start gap-5 self-end border-l-4 pl-5 sm:h-auto sm:flex-row sm:items-start sm:justify-center sm:gap-10 lg:border-none">
       <div>
-        <h2 className="text-lg text-gray-500 uppercase">Filter_module</h2>
+        {/* not title animation but it suits here */}
+
+        <h2 className="filter-text">Filter_module</h2>
 
         <div className="flex flex-wrap gap-5 sm:flex-nowrap">
           <button onClick={() => handleGenreFilter(null)} className="btn-hero">
@@ -40,9 +71,10 @@ export default function FilterModule({
       </div>
 
       <div>
-        <h2 className="text-lg text-gray-500 uppercase">Sort_by</h2>
+        <h2 className="filter-text">Sort_by</h2>
 
         <select
+          ref={selectRef}
           className="font-main mt-1 w-fit appearance-none border bg-transparent px-4 py-2 text-white outline-none"
           onChange={(e) =>
             handleFilter(e.target.value as "oldest" | "newest" | null)
