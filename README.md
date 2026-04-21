@@ -22,3 +22,4 @@
 5.  not to forget to put 3d models into public folder / increace scale of 3d model in order to see it / check position
 6.  Fixed breaks out of relative and attaches to monitor
 7.  A little bit more about margin-auto, depends on flex and pushes according to width;
+8.  The diffirence between drop-shadow and shadow

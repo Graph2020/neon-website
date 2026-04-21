@@ -1,5 +1,5 @@
 "use client";
-import { useState, type JSX } from "react";
+import { useEffect, useState, type JSX } from "react";
 import { GiVineFlower } from "react-icons/gi";
 import { NavLinks } from "../const";
 import Link from "next/link";
@@ -12,6 +12,10 @@ import Menu from "../components/Menu";
 export default function NavBar(): JSX.Element {
   const pathname = usePathname();
   const [activeMenu, setActiveMenu] = useState<boolean>(false);
+
+  useEffect(() => {
+    setActiveMenu(false);
+  }, [pathname]);
 
   return (
     <nav className="font-main relative z-50 flex h-20 w-full items-center justify-between border-b-4 border-b-white p-2 sm:p-5">
@@ -45,7 +49,7 @@ export default function NavBar(): JSX.Element {
         })}
       </ul>
 
-      {activeMenu && <Menu />}
+      <Menu activeMenu={activeMenu} />
 
       <div className="hidden size-12 bg-[url('/giphy.gif')] bg-cover bg-center md:block"></div>
     </nav>
