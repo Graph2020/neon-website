@@ -86,13 +86,16 @@ function MessageInput({
           className="contact-input resize-none"
           id={id}
           rows={4}
+          required
           placeholder={placeHolder}
         />
       ) : (
         <input
+          minLength={inputType === "email" ? 7 : 3}
           className="contact-input"
           type={inputType}
           id={id}
+          required
           placeholder={placeHolder}
         />
       )}

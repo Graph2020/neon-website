@@ -68,7 +68,7 @@ export default function Menu({
   return (
     <div
       ref={menuRef}
-      className="menu-shadow font-body fixed inset-0 z-30 flex h-dvh w-full flex-col items-start bg-black px-6 pt-50 sm:hidden"
+      className="menu-shadow font-body fixed inset-0 z-30 flex h-dvh w-full -translate-y-full flex-col items-start bg-black px-6 pt-50 sm:hidden"
     >
       <h2 className="text-main center-element text-2xl font-black">
         {" "}
