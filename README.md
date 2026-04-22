@@ -20,6 +20,22 @@
 
 4.  In props you can pass whole color instead like text-blue-500 then tailwind will be satisfied instead of text-${color}
 5.  not to forget to put 3d models into public folder / increace scale of 3d model in order to see it / check position
-6.  Fixed breaks out of relative and attaches to monitor
+6.  Fixed breaks out of relative and attaches to monitor width height
 7.  A little bit more about margin-auto, depends on flex and pushes according to width;
-8.  The diffirence between drop-shadow and shadow
+
+8.  The diffirence between drop-shadow and shadow (drop-shadow dirrectly affects element, shadow creates box around element)
+
+9.  How to do animation when link changes, when you close the menu
+    useEffect(() => {
+    setActiveMenu(false);
+    }, [pathname]);
+
+    if (activeMenu) {
+    gsap.fromTo(
+    menuRef.current,
+    {
+    y: "-100%",
+    },
+    } else {
+    gsap.to(menuRef.current, {
+    y: "-100%",

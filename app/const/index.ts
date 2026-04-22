@@ -150,7 +150,7 @@ const modelsElements: ModelsType[] = [
   },
 ];
 
-export const titleAnimationAndFilterAnimation = {
+const titleAnimationAndFilterAnimation = {
   opacity: 0,
   y: 50,
   stagger: 0.1,

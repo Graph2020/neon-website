@@ -1,9 +1,8 @@
-import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 import type { ThreeElements } from "@react-three/fiber";
 
-export function Model(props: ThreeElements["group"]) {
+export function CrystalSword(props: ThreeElements["group"]) {
   const { nodes, materials } = useGLTF("/crystal_sword.glb");
   return (
     <group {...props} dispose={null}>

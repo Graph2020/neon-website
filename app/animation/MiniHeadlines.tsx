@@ -4,6 +4,7 @@ import { SplitText } from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { useRef } from "react";
+import { useMediaQuery } from "react-responsive";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(SplitText);
@@ -14,6 +15,8 @@ export default function MiniHeadlines({
   children: React.ReactNode;
 }) {
   const textRef = useRef<HTMLDivElement>(null);
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+
   useGSAP(() => {
     if (!textRef.current) return;
 
@@ -27,6 +30,7 @@ export default function MiniHeadlines({
       y: 50,
       stagger: 0.1,
       ease: "power3.out",
+      delay: isMobile ? 0.8 : 0,
 
       scrollTrigger: {
         trigger: textRef.current,
